@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML with Modern CSS Layout</title>
+    <style>
+        /* ==========================================================================
+           2. Box Model & Sizing (The Core Foundation)
+           ========================================================================== */
+        * {
+            box-sizing: border-box; /* Ensures padding & border do not break calculations */
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* 3. Typography & Text */
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+        }
+
+        /* ==========================================================================
+           1. Structural Layout Engines (Grid & Flexbox Layouts)
+           ========================================================================== */
+        
+        /* Navigation header using Flexbox */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 2rem;
+            
+            /* Sticky positioning (5. Precise Positioning) */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Space out title and nav items */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto; /* Centered layout container */
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #1a365d;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem; /* Easy modern margin-free gap control */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            /* 6. Micro-Interactions */
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #3182ce;
+        }
+
+        /* Hero section spacing & background styling */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            /* 4. Visual Styles (Art Directions & Gradient Backgrounds) */
+            background-image: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero h2 {
+            font-size: 2.25rem;
+            color: #2b6cb0;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+            color: #4a5568;
+            font-size: 1.125rem;
+        }
+
+        /* Hero link CTA styled as a button */
+        .hero-link {
+            display: inline-block;
+            background-color: #3182ce;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+            /* 6. Micro-Interactions */
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .hero-link:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-2px);
+        }
+
+        /* Main structure using CSS Grid */
+        .page-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default mobile view */
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Responsive adjustments for 2D Grid layouts */
+        @media (min-width: 768px) {
+            .page-grid {
+                grid-template-columns: 7fr 3fr; /* Left (70%) and Right (30%) columns */
+            }
+        }
+
+        /* ==========================================================================
+           4. Visual Styles & Typography (Content Cards)
+           ========================================================================== */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        article {
+            background-color: #ffffff;
+            border: 1px solid #edf2f7;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        .publish-date {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        article code {
+            background-color: #edf2f7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #e53e3e;
+        }
+
+        /* Forms, inputs & UI components formatting */
+        form {
+            margin-top: 1.5rem;
+        }
+
+        fieldset {
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #f7fafc;
+        }
+
+        legend {
+            padding: 0 0.5rem;
+            color: #2b6cb0;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #4a5568;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #ffffff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #3182ce;
+            color: #ffffff;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2b6cb0;
+        }
+
+        input[type="reset"] {
+            background-color: #e2e8f0;
+            color: #4a5568;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #cbd5e0;
+        }
+
+        input:active {
+            transform: scale(0.98);
+        }
+
+        /* Sidebar Styling */
+        aside {
+            background-color: #ffffff;
+            border: 1px solid #edf2f7;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            /* Align sidebar with the top viewport offset when scrolling */
+            position: sticky;
+            top: 5rem; 
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #1a365d;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ebf8ff;
+            padding-bottom: 0.5rem;
+        }
+
+        aside h4 {
+            color: #2b6cb0;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        aside ul, aside ol {
+            padding-left: 1.25rem;
+            color: #4a5568;
+        }
+
+        aside li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #1a365d;
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin-top: 5rem;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>StaticWeb</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#articles">Articles</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Showcase Section -->
+    <section class="hero" id="home">
+        <h2>Semantic Structures With Modern CSS</h2>
+        <p>This layout transitions standard HTML markup blocks into a beautiful, highly responsive, and accessible document tree using modern layout engines.</p>
+        <a href="#articles" class="hero-link">Read Our Articles Below &darr;</a>
+    </section>
+
+    <!-- Main Content Grid Layout -->
+    <div class="page-grid">
+        
+        <!-- Left Column: Main Articles Content -->
+        <main id="articles">
+           
+            <article>
+                <h2>1. Core Structural Tags</h2>
+                <span class="publish-date">Published: July 7, 2026</span>
+                <p>When you omit cascading style sheets entirely, the semantic markup handles all of the structural heavy lifting. Elements like <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code> tell screen readers and web scrapers exactly how information flows.</p>
+                <p>Using raw browser defaults ensures excellent loading performance, perfect accessibility compliance, and absolute structural clarity.</p>
+            </article>
+
+            <article>
+                <h2>2. Native Interaction Elements</h2>
+                <span class="publish-date">Published: July 5, 2026</span>
+                <p>Browsers come equipped with excellent interactive elements by default. We can capture text inputs, provide multiple-choice configurations, and submit structured information to backend parsers using pure markup.</p>
+               
+                <h3>Interactive Demonstration Forms</h3>
+                
+                <form id="contact" action="#" method="post">
+                    <fieldset>
+                        <legend>User Inquiry Form</legend>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name: </label>
+                            <input type="text" id="name" name="username" required placeholder="John Doe">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address: </label>
+                            <input type="email" id="email" name="useremail" required placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic">Inquiry Topic: </label>
+                            <select id="topic" name="usertopic">
+                                <option value="general">General Feedback</option>
+                                <option value="technical">Technical Architecture</option>
+                                <option value="academics">Academic Curriculum</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message Details:</label>
+                            <textarea id="message" name="usermessage" rows="5" placeholder="Type your notes here..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <input type="submit" value="Submit Form Data">
+                            <input type="reset" value="Clear Entries">
+                        </div>
+                    </fieldset>
+                </form>
+            </article>
+
+        </main>
+
+        <!-- Right Column: Sidebar Navigation/References -->
+        <aside id="about">
+            <h3>Document References</h3>
+            <p>Static pages map data out directly without real-time database queries or processor overhead.</p>
+           
+            <h4>Core Benefits:</h4>
+            <ul>
+                <li>Instant browser painting</li>
+                <li>Low memory footprints</li>
+                <li>High data compatibility</li>
+            </ul>
+
+            <h4>Required Components:</h4>
+            <ol>
+                <li>Document Type Definition</li>
+                <li>Semantic Wrapper Blocks</li>
+                <li>Data Input Control Interfaces</li>
+            </ol>
+        </aside>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 Pure HTML Architecture. Assembled completely without style configurations.</p>
+    </footer>
+
+</body>
+</html>
