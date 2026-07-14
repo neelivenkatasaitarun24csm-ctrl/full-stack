@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & HTML5 Comprehensive Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header, nav, main, section, footer, aside {
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        header, footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        canvas {
+            border: 1px dashed #333;
+            background-color: #fff;
+        }
+        form div {
+            margin-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HTML5 Semantic Header -->
+    <header>
+        <h1>Embracing the Reality of Web Markup</h1>
+        <p>A Complete Guide from Basic HTML to Modern HTML5</p>
+    </header>
+
+    <!-- HTML5 Semantic Navigation -->
+    <nav>
+        <a href="#basics">Basic Tags</a>
+        <a href="#lists-tables">Lists & Tables</a>
+        <a href="#media">Open Media</a>
+        <a href="#graphics">Canvas Graphics</a>
+        <a href="#forms">Forms</a>
+    </nav>
+
+    <!-- HTML5 Main Content Area -->
+    <main>
+        
+        <!-- Section: Basic Tags & Hyperlinks -->
+        <section id="basics">
+            <h2>1. Basic Tags & Hyperlinks</h2>
+            <p>This is a paragraph demonstrating basic text layout. You can emphasize text using <strong>strong formatting</strong> or <em>italics</em>.</p>
+            <br>
+            <p>Below is an example of an external hyperlink:</p>
+            <a href="https://www.w3.org" target="_blank">Visit the W3C Official Website</a>
+        </section>
+
+        <!-- Section: Lists & Tables -->
+        <section id="lists-tables">
+            <h2>2. Lists and Tables</h2>
+            
+            <h3>Unordered List</h3>
+            <ul>
+                <li>HTML5 Semantic Elements</li>
+                <li>Native Audio and Video</li>
+                <li>Canvas API</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>Structure the Document</li>
+                <li>Style with CSS</li>
+                <li>Add Interaction with JavaScript</li>
+            </ol>
+
+            <h3>Data Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Type</th>
+                        <th>HTML5 Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;font&gt;</code></td>
+                        <td>Formatting</td>
+                        <td>Deprecated (Use CSS)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;header&gt;</code></td>
+                        <td>Semantic Layout</td>
+                        <td>Supported (New)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;canvas&gt;</code></td>
+                        <td>Graphics</td>
+                        <td>Supported (New)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section: Images, Inline Frames, and Open Media Effort -->
+        <section id="media">
+            <h2>3. Images, Inline Frames & Open Media</h2>
+            
+            <h3>Image Element</h3>
+            <!-- Placeholder image for demonstration -->
+            <img src="https://via.placeholder.com/300x150" alt="Placeholder demonstration image">
+
+            <h3>Modern Inline Frame (iframe)</h3>
+            <iframe src="about:blank" title="Inline Frame Demo" name="demo-frame"></iframe>
+            <p><small>Note: Old <code>&lt;frame&gt;</code> and <code>&lt;frameset&gt;</code> tags are obsolete in HTML5.</small></p>
+
+            <h3>HTML5 Native Video</h3>
+            <!-- Replace src with a valid video file path to test locally -->
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>HTML5 Native Audio</h3>
+            <!-- Replace src with a valid audio file path to test locally -->
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- Section: Client-Side Graphics with Canvas -->
+        <section id="graphics">
+            <h2>4. Client-Side Graphics with &lt;canvas&gt;</h2>
+            <p>Below is a resolution-dependent bitmap canvas rendered dynamically via JavaScript:</p>
+            
+            <canvas id="myCanvas" width="400" height="150"></canvas>
+
+            <script>
+                // JavaScript script to draw shapes inside the HTML5 Canvas
+                const canvas = document.getElementById('myCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Draw a blue rectangle
+                ctx.fillStyle = '#3498db';
+                ctx.fillRect = (20, 20, 150, 100);
+
+                // Draw a green circle
+                ctx.beginPath();
+                ctx.arc(300, 70, 45, 0, 2 * Math.PI);
+                ctx.fillStyle = '#2ecc71';
+                ctx.fill();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#27ae60';
+                ctx.stroke();
+            </script>
+        </section>
+
+        <!-- Section: Forms -->
+        <section id="forms">
+            <h2>5. Interactive Forms</h2>
+            <form action="#" method="post">
+                <div>
+                    <label prejudices="name">Full Name:</label><br>
+                    <input type="text" id="name" name="user_name" placeholder="John Doe" required>
+                </div>
+                <div>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="user_email" placeholder="example@domain.com" required>
+                </div>
+                <div>
+                    <label for="comments">Comments:</label><br>
+                    <textarea id="comments" name="user_comments" rows="4" cols="40"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Submit Information</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- HTML5 Semantic Aside (Sidebar content) -->
+    <aside>
+        <h3>Quick Fact</h3>
+        <p>HTML5 removed the reliance on proprietary plugins like Flash by introducing native tags like <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, and <code>&lt;canvas&gt;</code>.</p>
+    </aside>
+
+    <!-- HTML5 Semantic Footer -->
+    <footer>
+        <p>&copy; 2026 Web Development Essentials Document.</p>
+    </footer>
+
+</body>
+</html>
