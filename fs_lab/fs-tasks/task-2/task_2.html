@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Styled Webpage</title>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>My Styled Webpage</h1>
+    <p>Demonstrating HTML5 Canvas Graphics and Web Layout Structure</p>
+  </header>
+
+  <hr>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#canvas">Canvas Section</a> |
+    <a href="#cards">Services Section</a> |
+    <a href="#about">About</a> |
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <hr>
+
+  <!-- Main Content Container -->
+  <main>
+
+    <!-- Part A: HTML5 Canvas Section -->
+    <section id="canvas">
+      <h2>Part A: HTML5 Canvas Graphics</h2>
+      <p>Graphics rendered dynamically via JavaScript canvas methods:</p>
+      
+      <!-- Canvas element -->
+      <canvas id="myCanvas" width="600" height="250"></canvas>
+    </section>
+
+    <hr>
+
+    <!-- Part B: Three Content Cards Section -->
+    <section id="cards">
+      <h2>Part B: Content Cards</h2>
+      
+      <!-- Card 1 -->
+      <article>
+        <h3>Web Design</h3>
+        <p>Crafting modern, responsive layouts using HTML5 and structural tags tailored to user requirements.</p>
+        <button type="button">Read More</button>
+      </article>
+
+      <br>
+
+      <!-- Card 2 -->
+      <article>
+        <h3>Canvas Graphics</h3>
+        <p>Utilizing the 2D canvas API for dynamic rendering of shapes, text formatting, and graphic visualizations.</p>
+        <button type="button">Explore</button>
+      </article>
+
+      <br>
+
+      <!-- Card 3 -->
+      <article>
+        <h3>Interactive UI</h3>
+        <p>Enhancing user interactive experiences through semantic markup and integrated scripts.</p>
+        <button type="button">Get Started</button>
+      </article>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2026 My Styled Webpage | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript for Drawing on Canvas (Part A) -->
+  <script>
+    // Get the canvas element and its 2D rendering context
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 1. Draw a Rectangle
+    ctx.fillStyle = 'red';
+    ctx.fillRect(30, 30, 120, 80);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'black';
+    ctx.strokeRect(30, 30, 120, 80);
+
+    // 2. Draw a Circle
+    ctx.beginPath();
+    ctx.arc(240, 70, 40, 0, Math.PI * 2, false);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+    // 3. Draw a Line
+    ctx.beginPath();
+    ctx.moveTo(330, 30);
+    ctx.lineTo(520, 110);
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = 'blue';
+    ctx.stroke();
+
+    // 4. Display Name as Text
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText('Student Name: Surya Prabhath', 100, 180);
+  </script>
+
+</body>
+</html>
